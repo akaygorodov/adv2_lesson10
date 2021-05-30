@@ -6,7 +6,7 @@ public class Main {
         Report report = Report.builder().header("Header").body("Body").build();
         Report report1 = report.toBuilder().footer("Footer").build();
 
-        System.out.printf("");
+        System.out.println(report);
 
         PowInterface power;
         power = (number, powerValue) -> {
@@ -16,7 +16,7 @@ public class Main {
             }
             return result;
         };
-
+        System.out.println(power.calcPower(0, 0));
 
     }
 }
