@@ -7,5 +7,16 @@ public class Main {
         Report report1 = report.toBuilder().footer("Footer").build();
 
         System.out.printf("");
+
+        PowInterface power;
+        power = (number, powerValue) -> {
+            int result = 1;
+            for (int i = 0; i < powerValue; i++) {
+                result = (result * number);
+            }
+            return result;
+        };
+
+
     }
 }
