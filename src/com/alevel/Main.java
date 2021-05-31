@@ -6,6 +6,7 @@ public class Main {
         Report report = Report.builder().header("Header").body("Body").build();
         Report report1 = report.toBuilder().footer("Footer").build();
 
-        System.out.printf("");
+        System.out.println(report.toString());
+        System.out.println(report1.toString());
     }
 }
