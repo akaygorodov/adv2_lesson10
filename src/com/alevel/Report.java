@@ -17,7 +17,7 @@ public class Report extends AbstractReport {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(header,footer,this.body);
+        return new ReportBuilder(this.header,this.footer,this.body);
     }
 
     public static class ReportBuilder{
