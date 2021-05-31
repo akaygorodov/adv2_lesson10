@@ -1,10 +1,10 @@
 package com.alevel;
 
-public class Report {
+public class Report extends AbstractReport {
 
-    private String header;
     private String body;
-    private String footer;
+    private String header = getHeader();
+    private String footer = getFooter();
 
     private Report(String header, String body, String footer) {
         this.header = header;
@@ -52,6 +52,23 @@ public class Report {
         public Report build() {
             return new Report(this.header, this.body, this.footer);
         }
+
+        @Override
+        public String toString() {
+            return "ReportBuilder{" +
+                    "header='" + header + '\'' +
+                    ", body='" + body + '\'' +
+                    ", footer='" + footer + '\'' +
+                    '}';
+        }
     }
 
+    @Override
+    public String toString() {
+        return "Report{" +
+                "header='" + header + '\'' +
+                ", body='" + body + '\'' +
+                ", footer='" + footer + '\'' +
+                '}';
+    }
 }
