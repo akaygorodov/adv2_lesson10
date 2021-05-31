@@ -7,7 +7,7 @@ public class Report extends AbstractReport {
     private String footer = getFooter();
 
     private Report(String header, String body, String footer) {
-        this.header = header ;
+        this.header = header;
         this.body = body;
         this.footer = footer;
     }
@@ -17,10 +17,10 @@ public class Report extends AbstractReport {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(this.header,this.footer,this.body);
+        return new ReportBuilder(this.header, this.body, this.footer);
     }
 
-    public static class ReportBuilder{
+    public static class ReportBuilder {
         private String header;
         private String body;
         private String footer;
