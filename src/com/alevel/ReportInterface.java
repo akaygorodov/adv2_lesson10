@@ -15,5 +15,4 @@ public interface ReportInterface {
     default String getFooter() {
         return footer;
     }
-
 }
