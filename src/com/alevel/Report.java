@@ -27,7 +27,7 @@ public class Report extends ReportAbstract {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(super.header, this.body, super.footer);
+        return new ReportBuilder(getHeader(), this.body, getFooter());
     }
 
     public static class ReportBuilder {

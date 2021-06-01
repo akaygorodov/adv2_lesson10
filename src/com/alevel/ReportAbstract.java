@@ -1,8 +1,8 @@
 package com.alevel;
 
 public abstract class ReportAbstract {
-    protected String header;
-    protected String footer;
+    private String header;
+    private String footer;
 
     protected ReportAbstract(String header, String footer){
         this.header = header;
@@ -16,4 +16,5 @@ public abstract class ReportAbstract {
     public String getFooter() {
         return footer;
     }
+
 }
