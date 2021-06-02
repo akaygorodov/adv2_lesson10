@@ -1,15 +1,13 @@
 package com.alevel;
 
-public class Report {
-
-    private String header;
+public class Report extends ReportAbstract{
     private String body;
-    private String footer;
 
     private Report(String header, String body, String footer) {
-        this.header = header;
+        super(header, footer);
         this.body = body;
-        this.footer = footer;
+        getFooter();
+        getHeader();
     }
 
     public static ReportBuilder builder() {
@@ -17,7 +15,7 @@ public class Report {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(this.header, this.body, this.footer);
+        return new ReportBuilder(getHeader(), this.body, getFooter());
     }
 
     public static class ReportBuilder {
@@ -53,5 +51,4 @@ public class Report {
             return new Report(this.header, this.body, this.footer);
         }
     }
-
 }
