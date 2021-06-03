@@ -1,15 +1,35 @@
 package com.alevel;
 
-public class Report {
+import java.util.Objects;
 
-    private String header;
+public class Report extends AbstractReport {
+
     private String body;
-    private String footer;
 
     private Report(String header, String body, String footer) {
-        this.header = header;
+        super.header = header;
         this.body = body;
-        this.footer = footer;
+        super.footer = footer;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (this == null) return false;
+        if (getClass() != o.getClass()) return false;
+        if (body != ((Report) o).getBody() || super.header != ((Report) o).getHeader() || getFooter() != ((Report) o).getFooter())
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), body);
+
     }
 
     public static ReportBuilder builder() {
@@ -17,7 +37,7 @@ public class Report {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(this.header, this.body, this.footer);
+        return new ReportBuilder(super.header, this.body, super.footer);
     }
 
     public static class ReportBuilder {
@@ -53,5 +73,4 @@ public class Report {
             return new Report(this.header, this.body, this.footer);
         }
     }
-
 }
