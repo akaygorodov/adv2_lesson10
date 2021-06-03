@@ -9,6 +9,7 @@ public class Report extends AbstractReport{
         this.body = body;
         super.footer = footer;
     }
+    public String getBody(){return body;}
     public static ReportBuilder builder() {
         return new ReportBuilder();
     }
