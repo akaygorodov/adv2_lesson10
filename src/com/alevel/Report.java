@@ -1,5 +1,7 @@
 package com.alevel;
 
+import java.util.Objects;
+
 public class Report extends AbstractClass {
 
     private String body;
@@ -60,4 +62,18 @@ public class Report extends AbstractClass {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Report report = (Report) o;
+        return body.equals(report.body)
+                && getFooter().equals(report.getFooter())
+                && getHeader().equals(report.getHeader());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(body, getFooter(), getHeader());
+    }
 }

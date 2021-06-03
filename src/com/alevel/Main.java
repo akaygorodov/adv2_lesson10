@@ -1,10 +1,11 @@
 package com.alevel;
 
+import static com.alevel.PlanetEnum.*;
+
 public class Main {
 
     public static void main(String[] args) {
         Report report = Report.builder().header("Header").body("Body").build();
-
         System.out.println(report.toString());
 
         PowInterface powInterface;
@@ -16,5 +17,8 @@ public class Main {
             return res;
         };
         System.out.println(powInterface.pow(5, 3));
+
+        int satellites = URANUS.getNaturalSatellites();
+        System.out.println("Chosen planet has " + satellites + " natural satellites");
     }
 }
