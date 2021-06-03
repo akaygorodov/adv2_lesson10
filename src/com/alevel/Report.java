@@ -1,5 +1,7 @@
 package com.alevel;
 
+import java.util.Objects;
+
 public class Report extends ReportAbstract {
 
     private String body;
@@ -15,7 +17,7 @@ public class Report extends ReportAbstract {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format("Report: \n - header: %s\n - body: %s\n - footer: %s\n",
                 this.getHeader(),
                 this.getBody(),
@@ -28,6 +30,23 @@ public class Report extends ReportAbstract {
 
     public ReportBuilder toBuilder() {
         return new ReportBuilder(getHeader(), this.body, getFooter());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Report report = (Report) o;
+        if (!body.equals(report.body))
+            return false;
+        if (!((Report) o).getFooter().equals(this.getFooter()))
+            return false;
+        return ((Report) o).getHeader().equals(this.getHeader());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(body,this.getHeader(),this.getFooter());
     }
 
     public static class ReportBuilder {
