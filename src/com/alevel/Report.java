@@ -1,23 +1,21 @@
 package com.alevel;
 
-public class Report {
+public class Report extends AbstractReport{
 
-    private String header;
     private String body;
-    private String footer;
 
     private Report(String header, String body, String footer) {
-        this.header = header;
+        super.header = header;
         this.body = body;
-        this.footer = footer;
+        super.footer = footer;
     }
-
+    public String getBody(){return body;}
     public static ReportBuilder builder() {
         return new ReportBuilder();
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(this.header, this.body, this.footer);
+        return new ReportBuilder(super.header, this.body, super.footer);
     }
 
     public static class ReportBuilder {
