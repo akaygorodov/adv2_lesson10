@@ -16,6 +16,21 @@ public class Report extends AbstractReport {
         return body;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (this == null) return false;
+        if (getClass() != o.getClass()) return false;
+        if (body != ((Report) o).getBody() || super.header != ((Report) o).getHeader() || getFooter() != ((Report) o).getFooter())
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), body);
+
+    }
 
     public static ReportBuilder builder() {
         return new ReportBuilder();
