@@ -1,6 +1,8 @@
 package com.alevel;
 
-public class Report extends AbstractReport{
+import java.util.Objects;
+
+public class Report extends AbstractReport {
 
     private String body;
 
@@ -9,6 +11,12 @@ public class Report extends AbstractReport{
         this.body = body;
         super.footer = footer;
     }
+
+    public String getBody() {
+        return body;
+    }
+
+
     public static ReportBuilder builder() {
         return new ReportBuilder();
     }
@@ -50,5 +58,4 @@ public class Report extends AbstractReport{
             return new Report(this.header, this.body, this.footer);
         }
     }
-
 }

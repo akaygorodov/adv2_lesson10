@@ -24,4 +24,5 @@ public class Main {
         };
         System.out.printf(String.valueOf(toPow.pow(5, 3)));
     }
+
 }
