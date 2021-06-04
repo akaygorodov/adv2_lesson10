@@ -1,4 +1,4 @@
-package com.alevel;
+package ua.tarasov.adv2_lesson10;
 
 @FunctionalInterface
 public interface ReportInterface {

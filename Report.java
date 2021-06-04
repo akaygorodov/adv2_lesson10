@@ -1,15 +1,18 @@
-package com.alevel;
+package ua.tarasov.adv2_lesson10;
 
-public class Report {
+import java.util.Objects;
 
-    private String header;
-    private String body;
-    private String footer;
+public class Report extends ReportAbstract {
+
+    private final String header;
+    private final String body;
+    private final String footer;
 
     private Report(String header, String body, String footer) {
-        this.header = header;
+        super(header, footer);
+        this.header = super.getHeader();
         this.body = body;
-        this.footer = footer;
+        this.footer = super.getFooter();
     }
 
     public static ReportBuilder builder() {
@@ -54,4 +57,16 @@ public class Report {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Report report = (Report) o;
+        return header.equals(report.header) && body.equals(report.body);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(header, body, footer);
+    }
 }
