@@ -57,16 +57,24 @@ public class Report extends ReportAbstract {
         }
     }
 
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Report report = (Report) o;
+//        return header.equals(report.header) && body.equals(report.body);
+//    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(header, body, footer);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Report report = (Report) o;
-        return header.equals(report.header) && body.equals(report.body);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(header, body, footer);
+        return header.equals(report.header) && body.equals(report.body) && Objects.equals(footer, report.footer);
     }
 }
