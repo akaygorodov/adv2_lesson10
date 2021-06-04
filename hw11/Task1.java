@@ -1,8 +1,8 @@
-package ua.tarasov.adv2_lesson10;
+package ua.tarasov.adv2.hw11;
 
 import java.util.Scanner;
 
-public class HW11Task1 {
+public class Task1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите имя планеты солнечной системы, колличество спутников которой Вы хотите узнать:");

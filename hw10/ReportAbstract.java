@@ -1,4 +1,4 @@
-package ua.tarasov.adv2_lesson10;
+package ua.tarasov.adv2.hw10;
 
 public abstract class ReportAbstract {
     private String header;

@@ -1,4 +1,4 @@
-package ua.tarasov.adv2_lesson10;
+package ua.tarasov.adv2.hw11;
 
 public enum Planet {
     MERCURY(0),
