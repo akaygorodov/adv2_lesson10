@@ -8,11 +8,15 @@ public abstract class AbstractReport {
         this.footer = footer;
     }
 
+
     public String getHeader() {
         return header;
     }
+
+
+
     public String getFooter() {
         return footer;
-
     }
 }
+
