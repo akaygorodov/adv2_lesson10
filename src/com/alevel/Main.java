@@ -15,6 +15,8 @@ public class Main {
         };
         int result = calculate.pow(3,2);
         System.out.println(result);
+
+        PlanetEnum check = PlanetEnum.URANUS;
+        System.out.println(check.getSatellites());
     }
 }
-
