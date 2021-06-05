@@ -1,15 +1,17 @@
 package com.alevel;
 
-public class Report {
+import java.util.Objects;
 
-    private String header;
-    private String body;
-    private String footer;
+public class Report extends ReportAdd {
+    private final String body;
 
-    private Report(String header, String body, String footer) {
-        this.header = header;
+    Report(String header, String body, String footer) {
+        super(header, footer);
         this.body = body;
-        this.footer = footer;
+    }
+
+    public String getBody() {
+        return body;
     }
 
     public static ReportBuilder builder() {
@@ -17,7 +19,7 @@ public class Report {
     }
 
     public ReportBuilder toBuilder() {
-        return new ReportBuilder(this.header, this.body, this.footer);
+        return new ReportBuilder(super.getHeader(), this.body, super.getFooter());
     }
 
     public static class ReportBuilder {
@@ -54,4 +56,35 @@ public class Report {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (getClass() != o.getClass()) return false;
+       // if (o == null) return false;
+        return body.equals(((Report) o).getBody()) && super.header.equals(((Report) o).getHeader()) && super.footer.equals(((Report) o).getFooter());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), body);
+
+    }
+}
+
+abstract class ReportAdd {
+    public final String header;
+    public final String footer;
+
+    public String getHeader() {
+        return header;
+    }
+
+    public String getFooter() {
+        return footer;
+    }
+
+    public ReportAdd(String header, String footer) {
+        this.header = header;
+        this.footer = footer;
+    }
 }
