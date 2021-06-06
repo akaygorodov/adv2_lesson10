@@ -67,9 +67,9 @@ public class Report extends AbstractClass {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Report report = (Report) o;
-        return body.equals(report.body)
-                && getFooter().equals(report.getFooter())
-                && getHeader().equals(report.getHeader());
+        return Objects.equals(body, report.body)
+                && Objects.equals(getFooter(), report.getFooter())
+                && Objects.equals(getHeader(), report.getHeader());
     }
 
     @Override
