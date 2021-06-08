@@ -26,9 +26,10 @@ public class Demo {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
 //возвращаем вычитанный текст в строке
-            return stringBuilder.toString();
+                assert stringBuilder != null;
+                return stringBuilder.toString();
+            }
 
         }
         public static void main(String[] args) throws IOException {
