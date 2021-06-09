@@ -9,7 +9,7 @@ public class Task2 {
         String[] arrayOfAnyNumbers = new String[5];
 // ArrayIndexOutOfBoundsException возникнет, если в цикле задать i <= arrayOfAnyNumbers.length,
 // поскольку в этом случае мы выйдем за пределы массива
-        for (int i = 0; i <= arrayOfAnyNumbers.length; i++) {
+        for (int i = 0; i < arrayOfAnyNumbers.length; i++) {
             arrayOfAnyNumbers[i] = scan.next();
         }
 // NumberFormatException возникнет, если в цикле i начальное задать равным 1, поскольку элемент arrayOfAnyNumbers[0] будет null,
@@ -18,14 +18,13 @@ public class Task2 {
         System.out.println(z);
 
 
-        Array array2 = null;
+        Array array2 = new Array();
 // NullPointerException возникает поскольку метод doSomething вызывается по null-ссылке
         array2.doSomething();
 
-        Array array = new Array();
+        Array array = new Arrays();
 // ClassCastException возникает поскольку класс Arrays дочерний класс от Array
 // и тип array не может быть приведен к типу Arrays, только наоборот
-        Arrays array1 = (Arrays) array;
     }
 // В принципе все эти исключения относятся к классу RuntimeException и, соответственно, являются необрабатываемыми,
 // однако возможно в данном конкретном случае есть смысл обработать исключение NumberFormatException и отправить свой
