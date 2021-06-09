@@ -14,7 +14,7 @@ public class Demo {
             }
             return stringBuilder.toString();
         } catch (IOException e) {
-            System.out.println("error in specifying the path! " + e.getMessage());
+            System.out.println("error in specifying the path " + e.getMessage());
         } finally {
             if (reader != null) {
                 try {
@@ -25,8 +25,7 @@ public class Demo {
             }
         }
         return null;
-    }
-    public static void main(String[] args) {
+    }    public static void main(String[] args) {
         System.out.println(read("C:\\test.txt.txt"));
     }
 }
